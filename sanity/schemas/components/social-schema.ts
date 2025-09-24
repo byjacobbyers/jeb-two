@@ -19,6 +19,16 @@ const social = defineType({
 			name: 'linkedin',
 			type: 'url',
 		}),
+		defineField({
+			title: 'Twitter',
+			name: 'twitter',
+			type: 'url',
+		}),
+		defineField({
+			title: 'Instagram',
+			name: 'instagram',
+			type: 'url',
+		}),
 	],
 })
 

@@ -11,6 +11,7 @@ import AboutPage from "@/components/about-single"
 import { urlFor } from "@/components/sanity-image/url"
 import { metadata as defaultMetadata } from '@/app/(site)/layout';
 import AboutPageJsonLd from "@/components/aboutpage-jsonld";
+import PersonJsonLd from "@/components/person-jsonld";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const { data: global } = await sanityFetch({ query: SiteQuery });
@@ -58,6 +59,7 @@ export default async function About() {
 
   return (
     <>
+      <PersonJsonLd />
       <AboutPageJsonLd />
 			<AboutPage page={page} />
 		</>

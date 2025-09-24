@@ -17,7 +17,8 @@ const AboutPageJsonLd = () => {
       const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        name: about.title || 'About',
+        '@id': 'https://jacobbyers.me/about#webpage',
+        name: about.title || 'About Jacob Byers',
         url: 'https://jacobbyers.me/about',
         description:
           about.seo?.metaDesc ||
@@ -42,12 +43,13 @@ const AboutPageJsonLd = () => {
             },
           ],
         },
-        "author": {
-          "@type": "Person",
-          "name": "Jacob Byers",
-          "url": "https://jacobbyers.me/"
+        mainEntity: {
+          '@type': 'Person',
+          '@id': 'https://jacobbyers.me/#person',
+          name: 'Jacob Byers',
+          url: 'https://jacobbyers.me/'
         },
-        "inLanguage": "en"
+        inLanguage: 'en-US'
       }
 
       setJsonLdContent(JSON.stringify(jsonLd))

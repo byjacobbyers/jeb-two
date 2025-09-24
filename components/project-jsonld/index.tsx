@@ -34,6 +34,7 @@ const ProjectJsonLd = ({ project }: Props) => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
+    '@id': `https://jacobbyers.me/work/${project.slug}#creativework`,
     name: project.seo?.metaTitle || project.title,
     url: `https://jacobbyers.me/work/${project.slug || ''}`,
     image:
@@ -42,7 +43,7 @@ const ProjectJsonLd = ({ project }: Props) => {
       undefined,
     description: project.seo?.metaDesc,
     dateCreated: project._createdAt,
-    datePublished: project.releaseDate,
+    datePublished: project.releaseDate || project._createdAt,
     creator: project.credits?.length
       ? project.credits.map((credit) => ({
           '@type': 'Person',
@@ -51,8 +52,46 @@ const ProjectJsonLd = ({ project }: Props) => {
         }))
       : {
           '@type': 'Person',
+          '@id': 'https://jacobbyers.me/#person',
           name: 'Jacob Byers',
+          url: 'https://jacobbyers.me/'
         },
+    publisher: {
+      '@type': 'Person',
+      '@id': 'https://jacobbyers.me/#person',
+      name: 'Jacob Byers',
+      url: 'https://jacobbyers.me/'
+    },
+    mainEntity: {
+      '@type': 'WebPage',
+      '@id': `https://jacobbyers.me/work/${project.slug}#webpage`,
+      name: project.seo?.metaTitle || project.title,
+      url: `https://jacobbyers.me/work/${project.slug || ''}`,
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://jacobbyers.me/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Work',
+            item: 'https://jacobbyers.me/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: project.title,
+            item: `https://jacobbyers.me/work/${project.slug}`,
+          },
+        ],
+      },
+    },
+    inLanguage: 'en-US'
   }
 
   return (
