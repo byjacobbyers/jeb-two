@@ -48,7 +48,7 @@ const PersonJsonLd = () => {
             siteData.social?.twitter,
             siteData.social?.instagram,
           ].filter(Boolean),
-          description: siteData.seo?.metaDesc || 'Frontend engineer specializing in React, Next.js, and modern web development.',
+          description: 'Jacob Byers is a senior freelance web developer who specializes in high-performance, scalable websites built with modern tools like Next.js, Sanity CMS, and Vercel. He partners with marketing teams to craft composable, future-proof digital experiences that evolve with their business. With a background in both design systems and technical SEO, Jacob combines clean code with strategic thinking to help brands move faster, iterate easier, and stay ahead of the curve.',
           knowsAbout: [
             'Frontend Development',
             'React',
