@@ -10,7 +10,6 @@ export type SocialType = {
 	tiktok?: string
 	pinterest?: string
 	reddit?: string
-	snapchat?: string
 	patreon?: string
 	twitch?: string
 	threads?: string

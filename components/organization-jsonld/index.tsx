@@ -59,7 +59,6 @@ const OrganizationJsonLd = () => {
             siteData.social?.tiktok,
             siteData.social?.pinterest,
             siteData.social?.reddit,
-            siteData.social?.snapchat,
             siteData.social?.patreon,
             siteData.social?.twitch,
             siteData.social?.threads,

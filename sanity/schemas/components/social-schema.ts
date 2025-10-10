@@ -55,11 +55,6 @@ const social = defineType({
 			type: 'url',
 		}),
 		defineField({
-			title: 'Snapchat',
-			name: 'snapchat',
-			type: 'url',
-		}),
-		defineField({
 			title: 'Patreon',
 			name: 'patreon',
 			type: 'url',
