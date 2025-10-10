@@ -17,9 +17,9 @@ const HomePageJsonLd = () => {
         const jsonLd = {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          '@id': 'https://jacobbyers.me/#webpage',
+          '@id': 'https://www.jacobbyers.me/#webpage',
           name: 'Jacob Byers | Frontend Engineer',
-          url: 'https://jacobbyers.me/',
+          url: 'https://www.jacobbyers.me/',
           description: siteData.seo?.metaDesc || 'Portfolio of Jacob Byers, a frontend engineer with a passion for building user-friendly web applications.',
           breadcrumb: {
             '@type': 'BreadcrumbList',
@@ -28,13 +28,13 @@ const HomePageJsonLd = () => {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://jacobbyers.me/',
+                item: 'https://www.jacobbyers.me/',
               },
             ],
           },
           mainEntity: {
             '@type': 'Person',
-            '@id': 'https://jacobbyers.me/#person',
+            '@id': 'https://www.jacobbyers.me/#person',
             name: siteData.title || 'Jacob Byers',
             alternateName: siteData.altTitle,
             jobTitle: 'Frontend Engineer',
@@ -43,7 +43,7 @@ const HomePageJsonLd = () => {
               name: 'Freelance'
             },
             image: 'https://cdn.sanity.io/images/w9zn3gtf/production/d9b9e38a3a52dd3cc051b0cf37e5e7e212f87e13-1200x630.jpg',
-            url: 'https://jacobbyers.me/',
+            url: 'https://www.jacobbyers.me/',
             address: {
               '@type': 'PostalAddress',
               addressLocality: siteData.addressLocality,

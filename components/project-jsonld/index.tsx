@@ -34,9 +34,9 @@ const ProjectJsonLd = ({ project }: Props) => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
-    '@id': `https://jacobbyers.me/work/${project.slug}#creativework`,
+    '@id': `https://www.jacobbyers.me/work/${project.slug}#creativework`,
     name: project.seo?.metaTitle || project.title,
-    url: `https://jacobbyers.me/work/${project.slug || ''}`,
+    url: `https://www.jacobbyers.me/work/${project.slug || ''}`,
     image:
       project.seo?.shareGraphic?.asset?.url ||
       project.defaultImage?.asset?.url ||
@@ -52,21 +52,21 @@ const ProjectJsonLd = ({ project }: Props) => {
         }))
       : {
           '@type': 'Person',
-          '@id': 'https://jacobbyers.me/#person',
+          '@id': 'https://www.jacobbyers.me/#person',
           name: 'Jacob Byers',
-          url: 'https://jacobbyers.me/'
+          url: 'https://www.jacobbyers.me/'
         },
     publisher: {
       '@type': 'Person',
-      '@id': 'https://jacobbyers.me/#person',
+      '@id': 'https://www.jacobbyers.me/#person',
       name: 'Jacob Byers',
-      url: 'https://jacobbyers.me/'
+      url: 'https://www.jacobbyers.me/'
     },
     mainEntity: {
       '@type': 'WebPage',
-      '@id': `https://jacobbyers.me/work/${project.slug}#webpage`,
+      '@id': `https://www.jacobbyers.me/work/${project.slug}#webpage`,
       name: project.seo?.metaTitle || project.title,
-      url: `https://jacobbyers.me/work/${project.slug || ''}`,
+      url: `https://www.jacobbyers.me/work/${project.slug || ''}`,
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -74,19 +74,19 @@ const ProjectJsonLd = ({ project }: Props) => {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://jacobbyers.me/',
+            item: 'https://www.jacobbyers.me/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Work',
-            item: 'https://jacobbyers.me/',
+            item: 'https://www.jacobbyers.me/',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: project.title,
-            item: `https://jacobbyers.me/work/${project.slug}`,
+            item: `https://www.jacobbyers.me/work/${project.slug}`,
           },
         ],
       },

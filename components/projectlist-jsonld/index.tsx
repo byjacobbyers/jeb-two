@@ -17,7 +17,7 @@ const ProjectListJsonLd = () => {
           '@type': 'CreativeWork',
           position: index + 1,
           name: item.title,
-          url: `https://jacobbyers.me/work/${item.slug}`,
+          url: `https://www.jacobbyers.me/work/${item.slug}`,
           description: item.description,
           image: item.image?.asset?.url || undefined,
         }))
@@ -26,7 +26,7 @@ const ProjectListJsonLd = () => {
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           name: 'Projects',
-          url: 'https://jacobbyers.me/',
+          url: 'https://www.jacobbyers.me/',
           description: 'A curated list of frontend development projects by Jacob Byers.',
           itemListElement: itemList,
         }

@@ -17,9 +17,9 @@ const AboutPageJsonLd = () => {
       const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        '@id': 'https://jacobbyers.me/about#webpage',
+        '@id': 'https://www.jacobbyers.me/about#webpage',
         name: about.title || 'About Jacob Byers',
-        url: 'https://jacobbyers.me/about',
+        url: 'https://www.jacobbyers.me/about',
         description:
           about.seo?.metaDesc ||
           'About page for Jacob Byers, Frontend Engineer specializing in composable architecture and modern frameworks.',
@@ -33,21 +33,21 @@ const AboutPageJsonLd = () => {
               '@type': 'ListItem',
               position: 1,
               name: 'Home',
-              item: 'https://jacobbyers.me/',
+              item: 'https://www.jacobbyers.me/',
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'About',
-              item: 'https://jacobbyers.me/about',
+              item: 'https://www.jacobbyers.me/about',
             },
           ],
         },
         mainEntity: {
           '@type': 'Person',
-          '@id': 'https://jacobbyers.me/#person',
+          '@id': 'https://www.jacobbyers.me/#person',
           name: 'Jacob Byers',
-          url: 'https://jacobbyers.me/'
+          url: 'https://www.jacobbyers.me/'
         },
         inLanguage: 'en-US'
       }

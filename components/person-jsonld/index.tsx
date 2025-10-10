@@ -17,7 +17,7 @@ const PersonJsonLd = () => {
         const jsonLd = {
           '@context': 'https://schema.org',
           '@type': 'Person',
-          '@id': 'https://jacobbyers.me/#person',
+          '@id': 'https://www.jacobbyers.me/#person',
           name: siteData.title || 'Jacob Byers',
           alternateName: siteData.altTitle,
           givenName: 'Jacob',
@@ -26,10 +26,10 @@ const PersonJsonLd = () => {
           worksFor: {
             '@type': 'Organization',
             name: 'Freelance',
-            '@id': 'https://jacobbyers.me/#organization'
+            '@id': 'https://www.jacobbyers.me/#organization'
           },
           image: 'https://cdn.sanity.io/images/w9zn3gtf/production/d9b9e38a3a52dd3cc051b0cf37e5e7e212f87e13-1200x630.jpg',
-          url: 'https://jacobbyers.me/',
+          url: 'https://www.jacobbyers.me/',
           address: {
             '@type': 'PostalAddress',
             addressLocality: siteData.addressLocality,

@@ -17,23 +17,23 @@ const OrganizationJsonLd = () => {
         const jsonLd = {
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          '@id': 'https://jacobbyers.me/#organization',
+          '@id': 'https://www.jacobbyers.me/#organization',
           name: 'Jacob Byers - Freelance Frontend Development',
           alternateName: 'Jacob Byers Web Development',
-          url: 'https://jacobbyers.me/',
+          url: 'https://www.jacobbyers.me/',
           logo: 'https://cdn.sanity.io/images/w9zn3gtf/production/d9b9e38a3a52dd3cc051b0cf37e5e7e212f87e13-1200x630.jpg',
           image: 'https://cdn.sanity.io/images/w9zn3gtf/production/d9b9e38a3a52dd3cc051b0cf37e5e7e212f87e13-1200x630.jpg',
           description: 'Freelance frontend development services specializing in React, Next.js, and modern web applications.',
           foundingDate: '2020',
           founder: {
             '@type': 'Person',
-            '@id': 'https://jacobbyers.me/#person',
+            '@id': 'https://www.jacobbyers.me/#person',
             name: siteData.title || 'Jacob Byers',
-            url: 'https://jacobbyers.me/'
+            url: 'https://www.jacobbyers.me/'
           },
           employee: {
             '@type': 'Person',
-            '@id': 'https://jacobbyers.me/#person',
+            '@id': 'https://www.jacobbyers.me/#person',
             name: siteData.title || 'Jacob Byers',
             jobTitle: 'Frontend Engineer'
           },
