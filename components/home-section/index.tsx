@@ -27,7 +27,7 @@ export default function HomeSection({ projects, page }: Props) {
   return (
     <section className="px-5 pt-20 min-h-[calc(100vh-3.5rem)] flex flex-wrap w-full gap-y-10">
       {/* Left Panel */}
-      <div className="md:w-3/5 w-full bg-gray-900 rounded-lg overflow-hidden min-h-[calc(100vh-26rem)] md:min-h-[calc(100vh-10rem)]">
+      <div className="md:w-3/5 w-full bg-gray-900 rounded-lg overflow-hidden h-[calc(100vh-26rem)] md:h-[calc(100vh-10rem)]">
         {greeting ? (
           <div className="text-2xl md:text-4xl h-full w-full p-5 grid content-center leading-[3rem] transition-opacity duration-700 opacity-100">
             <SimpleText content={page.content} />
@@ -83,10 +83,11 @@ export default function HomeSection({ projects, page }: Props) {
       </div>
 
       {/* Right Panel */}
-      <div className="md:w-2/5 w-full grid md:pl-5 content-center">
-        <h2 className="text-2xl md:text-4xl font-bold mb-2 uppercase tracking-wide text-white">
+      <div className="md:w-2/5 w-full md:pl-5 md:h-[calc(100vh-10rem)] flex flex-col">
+        <h2 className="text-2xl md:text-4xl font-bold mb-2 uppercase tracking-wide text-white flex-shrink-0">
           Projects
         </h2>
+        <div className="overflow-y-auto overflow-x-hidden flex-1 pr-2 flex flex-col justify-center [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white [&::-webkit-scrollbar-thumb]:rounded-full">
         {projects.map((item, i) => (
           <Link 
             href={`/work/${item.slug}`} 
@@ -112,6 +113,7 @@ export default function HomeSection({ projects, page }: Props) {
             </div>
           </Link>
         ))}
+        </div>
       </div>
     </section>
   )
