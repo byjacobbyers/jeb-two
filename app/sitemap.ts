@@ -18,11 +18,13 @@ async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${URL}`,
       lastModified: HomeSlug._updatedAt,
+      changeFrequency: 'weekly' as const,
       priority: 1,
     },
     {
       url: `${URL}about`,
       lastModified: AboutSlug._updatedAt,
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
   ];
@@ -30,6 +32,7 @@ async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
   const works = WorkSlugs.map((work: { slug: string; _updatedAt: string }) => ({
     url: `${URL}work/${work.slug}`,
     lastModified: work._updatedAt,
+    changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
 
