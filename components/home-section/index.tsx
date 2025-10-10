@@ -100,10 +100,10 @@ export default function HomeSection({ projects, page }: Props) {
                   <SanityImage
                     source={item.thumbnail}
                     alt={item.thumbnail.alt}
-                    width={24}
-                    height={24}
+                    width={item.thumbnail.asset.metadata.dimensions.width}
+                    height={item.thumbnail.asset.metadata.dimensions.height}
                     componentIndex={0}
-                    className='object-cover object-center w-full'
+                    className='object-contain object-center w-full w-6 h-6'
                     sizes='100vw'
                   />
                 </div>
