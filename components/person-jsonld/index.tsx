@@ -56,7 +56,7 @@ const PersonJsonLd = () => {
             siteData.social?.twitch,
             siteData.social?.threads,
           ].filter(Boolean),
-          description: 'Jacob Byers is a senior freelance web developer who specializes in high-performance, scalable websites built with modern tools like Next.js, Sanity CMS, and Vercel. He partners with marketing teams to craft composable, future-proof digital experiences that evolve with their business. With a background in both design systems and technical SEO, Jacob combines clean code with strategic thinking to help brands move faster, iterate easier, and stay ahead of the curve.',
+          description: 'Jacob Byers is a senior freelance web developer who specializes in high-performance, scalable websites built with modern tools like Next.js, Sanity.io, and Vercel. He partners with marketing teams to craft composable, future-proof digital experiences that evolve with their business. With a background in both design systems and technical SEO, Jacob combines clean code with strategic thinking to help brands move faster, iterate easier, and stay ahead of the curve.',
           knowsAbout: [
             'Frontend Development',
             'React',
