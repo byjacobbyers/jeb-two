@@ -1,11 +1,17 @@
 export type SocialType = {
 	_key: string
 	_type: string
-	facebook?: string
+	github?: string
 	linkedin?: string
 	twitter?: string
 	instagram?: string
+	facebook?: string
 	youtube?: string
 	tiktok?: string
-  github?: string
+	pinterest?: string
+	reddit?: string
+	snapchat?: string
+	patreon?: string
+	twitch?: string
+	threads?: string
 }
