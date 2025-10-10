@@ -1,6 +1,7 @@
 // Tools
 import { sanityFetch } from "@/sanity/lib/live";
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 // Queries
 import { HomeQuery } from '@/sanity/queries/documents/page-query'
@@ -16,57 +17,69 @@ import ProjectListJsonLd from "@/components/projectlist-jsonld";
 import { metadata as defaultMetadata } from '@/app/(site)/layout';
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const { data: global } = await sanityFetch({ query: SiteQuery });
+  try {
+    const { data: global } = await sanityFetch({ query: SiteQuery });
 
-  // Check if seo exists
-  if (global[0]?.seo) {
-    const seoImage = global[0].seo.shareGraphic.asset.url;
-    const result = {
-      title: global[0].seo.metaTitle || defaultMetadata.title,
-      description: global[0].seo.metaDesc || defaultMetadata.description,
-      image: urlFor(seoImage).width(800).height(600).url(),
-    };
+    // Check if seo exists
+    if (global[0]?.seo) {
+      const seoImage = global[0].seo.shareGraphic.asset.url;
+      const result = {
+        title: global[0].seo.metaTitle || defaultMetadata.title,
+        description: global[0].seo.metaDesc || defaultMetadata.description,
+        image: urlFor(seoImage).width(800).height(600).url(),
+      };
 
-    return {
-      metadataBase: defaultMetadata.metadataBase,
-      generator: 'Next.js',
-		  applicationName: 'Jacob Byers | Frontend Engineer',
-		  publisher: 'Jacob Byers',
-      title: `${result.title} | Jacob Byers`,
-      description: result.description,
-      openGraph: {
+      return {
+        metadataBase: defaultMetadata.metadataBase,
+        generator: 'Next.js',
+        applicationName: 'Jacob Byers | Frontend Engineer',
+        publisher: 'Jacob Byers',
         title: `${result.title} | Jacob Byers`,
         description: result.description,
-        images: [
-          {
-            url: result.image,
-            width: 1200,
-            height: 630,
-            alt: result.title,
-          },
-        ],
-      },
-    };
-  }
+        openGraph: {
+          title: `${result.title} | Jacob Byers`,
+          description: result.description,
+          images: [
+            {
+              url: result.image,
+              width: 1200,
+              height: 630,
+              alt: result.title,
+            },
+          ],
+        },
+      };
+    }
 
-  // Fallback to default metadata if no SEO data exists
-  return defaultMetadata;
+    // Fallback to default metadata if no SEO data exists
+    return defaultMetadata;
+  } catch (error) {
+    return notFound();
+  }
 };
 
 export default async function Home() {
-  const { data: page } = await sanityFetch({
-    query: HomeQuery,
-  });
-  const { data: works } = await sanityFetch({
-    query: WorksQuery,
-  });
+  try {
+    const { data: page } = await sanityFetch({
+      query: HomeQuery,
+    });
+    const { data: works } = await sanityFetch({
+      query: WorksQuery,
+    });
 
-  return (
-    <>
-			<HomePageJsonLd />
-      <OrganizationJsonLd />
-      <ProjectListJsonLd />
-			<HomePage page={page} work={works} /> 
-		</>
-  );
+    if (!page || !works) {
+      return notFound()
+    }
+
+    return (
+      <>
+        <HomePageJsonLd />
+        <OrganizationJsonLd />
+        <ProjectListJsonLd />
+        <HomePage page={page} work={works} /> 
+      </>
+    );
+  } catch (error) {
+    notFound()
+  }
 }
