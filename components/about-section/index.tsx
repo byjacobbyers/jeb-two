@@ -36,7 +36,7 @@ export default function AboutSection({ page }: Props) {
           />
         )}
       </div>
-      <div className='text-2xl md:text-4xl md:h-full w-full md:w-3/5 content-center leading-[3rem] md:ml-5 md:pt-20'>
+      <div className='text-2xl md:text-4xl md:h-full w-full md:w-3/5 content-center leading-[3rem] md:ml-5 pt-10 md:pt-20'>
         <SimpleText content={page.heroText} />
       </div>
     </section>

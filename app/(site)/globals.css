@@ -157,7 +157,8 @@
 
 .bigDot::before {
 content: "•";
-margin-left: -0.8rem;
+position: absolute;
+left: -0.8rem;
 }
 
 

@@ -14,7 +14,7 @@ const Header: React.FC = () => {
     <header className="p-5 absolute z-50 w-full font-bold text-base md:text-4xl text-white">
       <div className="flex border-b border-white">
         {/* Home Link */}
-        <Link href="/" aria-label="Navigate to the home page" className="mb-1 no-underline md:mb-0 hover:text-gray-500 focus:text-gray-500">
+        <Link href="/" aria-label="Navigate to the home page" className="mb-1 no-underline md:mb-0 hover:text-gray-500 focus:text-white">
           Jacob Byers
         </Link>
 
@@ -31,18 +31,20 @@ const Header: React.FC = () => {
 
         {/* Navigation Links */}
         <nav className="flex ml-auto space-x-6 md:w-auto">
-          <Link href="/" className={`${pathname === '/' ? 'bigDot' : ''} no-underline hover:text-gray-500 focus:text-gray-500`}>
+          <Link href="/" className={`${pathname === '/' ? 'bigDot' : ''} relative no-underline hover:text-gray-500 focus:text-white`}>
             Work
           </Link>
-          <Link href="/about" className={`${pathname === '/about' ? 'bigDot' : ''} no-underline hover:text-gray-500 focus:text-gray-500`}>
+          <Link href="/about" className={`${pathname === '/about' ? 'bigDot' : ''} relative no-underline hover:text-gray-500 focus:text-white`}>
             About
           </Link>
           <a
-            href="mailto:byers.jacob@gmail.com"
-            className="no-underline hover:text-gray-500 focus:text-gray-500"
-            onClick={() => plausible('Email Click')}
+            href="https://calendly.com/ohmni/custom"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline hover:text-gray-500 focus:text-white"
+            onClick={() => plausible('Calendly Click')}
           >
-            Contact
+            Book Call
           </a>
         </nav>
       </div>
