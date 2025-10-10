@@ -103,7 +103,7 @@ export default function HomeSection({ projects, page }: Props) {
                     width={item.thumbnail.asset.metadata.dimensions.width}
                     height={item.thumbnail.asset.metadata.dimensions.height}
                     componentIndex={0}
-                    className='object-contain object-center w-full w-6 h-6'
+                    className='object-contain object-center w-6 h-6'
                     sizes='100vw'
                   />
                 </div>
