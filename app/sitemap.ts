@@ -7,7 +7,7 @@ import { WorkSiteMapQuery } from '@/sanity/queries/documents/work-query';
 const URL =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000/'
-    : 'https://jacobbyers.me/';
+    : 'https://www.jacobbyers.me/';
 
 async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
   const HomeSlug = await client.fetch(HomeSiteMapQuery);
