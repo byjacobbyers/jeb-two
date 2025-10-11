@@ -38,7 +38,7 @@ const Header: React.FC = () => {
             About
           </Link>
           <a
-            href="https://calendly.com/ohmni/custom"
+            href="https://calendly.com/ohmni/lets-talk"
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline hover:text-gray-500 focus:text-white"
