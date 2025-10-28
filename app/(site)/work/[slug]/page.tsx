@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 				],
 			},
 			alternates: {
-				canonical: page.slug,
+				canonical: `/work/${page.slug}`,
 			},
 		}
 	} catch (error) {
