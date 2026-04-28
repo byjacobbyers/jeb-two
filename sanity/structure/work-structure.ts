@@ -1,16 +1,39 @@
 import { PresentationIcon } from '@sanity/icons'
-import type { StructureBuilder } from 'sanity/structure'
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list'
+import type {
+  StructureBuilder,
+  StructureResolverContext,
+} from 'sanity/structure'
 
-const Work = (S: StructureBuilder) => {
+const Work = (S: StructureBuilder, context: StructureResolverContext) => {
   return S.listItem()
     .title('Work')
-    .icon(PresentationIcon) // Attach the icon here
+    .icon(PresentationIcon)
     .child(
-      S.documentList()
+      S.list()
         .title('Work')
-        .menuItems(S.documentTypeList('work').getMenuItems())
-        .filter('_type == "work"')
-        .defaultOrdering([{ field: '_createdAt', direction: 'desc' }]),
+        .items([
+          S.listItem({
+            id: 'work',
+            title: 'All work',
+            schemaType: 'work',
+            icon: PresentationIcon,
+            child: () =>
+              S.documentTypeList('work')
+                .title('Work')
+                .filter('_type == $type')
+                .params({ type: 'work' })
+                .defaultOrdering([
+                  { field: '_createdAt', direction: 'desc' },
+                ]),
+          }),
+          orderableDocumentListDeskItem({
+            type: 'work',
+            title: 'Order work',
+            S,
+            context,
+          }),
+        ]),
     )
 }
 

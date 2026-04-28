@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity'
 import { imageQuery } from '../objects/image-query'
 
-export const WorkSiteMapQuery = groq`*[_type == "work"]{
+export const WorkSiteMapQuery = groq`*[_type == "work"] | order(orderRank) {
   "slug": slug.current,
   _updatedAt
 }`
@@ -12,7 +12,7 @@ export const WorkPathsQuery = groq`*[_type == "work" && defined(slug.current)][]
 }`
 
 export const WorksQuery = groq`
-  *[_type == "work"] {
+  *[_type == "work"] | order(orderRank) {
     _id,
     _createdAt,
     _updatedAt,
@@ -32,7 +32,7 @@ export const WorksQuery = groq`
 `
 
 export const WorkJSONQuery = groq`
-    *[_type == "work"] {
+    *[_type == "work"] | order(orderRank) {
       _id,
       _createdAt,
       _updatedAt,

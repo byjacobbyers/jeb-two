@@ -1,0 +1,2 @@
+patchedDependencies:
+  '@sanity/orderable-document-list@1.5.1': patches/@sanity__orderable-document-list@1.5.1.patch

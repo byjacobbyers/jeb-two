@@ -1,0 +1,23 @@
+diff --git a/lib/index.js b/lib/index.js
+index 8011045b890315ddf1f1cffcace08ef323c37635..6e3444c695fdc668535051f8fa355271bb9d0660 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -352,9 +352,16 @@ function getDocumentQuery({
+   currentVersion
+ }) {
+   let perspectiveFilter = null;
+-  currentVersion === "published" ? perspectiveFilter = '!(_id in path("drafts.**")) && !(_id in path("versions.**"))' : currentVersion === "drafts" ? perspectiveFilter = `
++  if (currentVersion === "published")
++    perspectiveFilter = '!(_id in path("drafts.**")) && !(_id in path("versions.**"))';
++  else if (currentVersion === "drafts")
++    perspectiveFilter = `
+       (_id in path("drafts.**") || (!(_id in path("drafts.**")) && !(_id in path("versions.**"))))
+-    ` : perspectiveFilter = '(sanity::partOfRelease($currentVersion) || (!(_id in path("drafts.**")) && !(_id in path("versions.**"))) || (_id in path("drafts.**")))';
++    `;
++  else if (currentVersion)
++    perspectiveFilter = '(sanity::partOfRelease($currentVersion) || (!(_id in path("drafts.**")) && !(_id in path("versions.**"))) || (_id in path("drafts.**")))';
++  else
++    perspectiveFilter = "(_id in path(\"drafts.**\") || (!(_id in path(\"drafts.**\")) && !(_id in path(\"versions.**\"))))";
+   const querySelect = `*[_type == $type ${perspectiveFilter ? `&& ${perspectiveFilter}` : ""}${filter ? `&& ${filter}` : ""}]`, queryOrder = "|order(@[$order] asc)", queryFields = `{_id, _type, ${ORDER_FIELD_NAME}}`, query = `${querySelect}${queryOrder}${queryFields}`, queryParams = {
+     ...params,
+     type,

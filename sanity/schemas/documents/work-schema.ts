@@ -1,11 +1,15 @@
 import { defineType, defineField } from 'sanity'
-import {TargetIcon, BoltIcon} from '@sanity/icons'
-
+import { TargetIcon, BoltIcon } from '@sanity/icons'
+import {
+  orderRankField,
+  orderRankOrdering,
+} from '@sanity/orderable-document-list'
 
 export default defineType({
   name: 'work',
   title: 'Work',
   type: 'document',
+  orderings: [orderRankOrdering],
   fields: [
     defineField({
       name: 'thumbnail',
@@ -126,6 +130,7 @@ export default defineType({
       title: 'SEO',
       type: 'seo',
     }),
+    orderRankField({ type: 'work' }),
   ],
   preview: {
     select: {

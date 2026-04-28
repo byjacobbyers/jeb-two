@@ -4,12 +4,12 @@ import Home from './home-structure'
 import About from './about-structure'
 import Work from './work-structure'
 
-export const structure: StructureResolver = (S) =>
+export const structure: StructureResolver = (S, context) =>
   S.list()
     .title('Content')
     .items([
       Home(S),
       About(S),
-      Work(S),
-			Global(S),
+      Work(S, context),
+      Global(S),
     ])
