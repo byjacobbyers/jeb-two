@@ -90,7 +90,7 @@ export default function WorkSection({ page }: Props) {
           return (
             <div className="p-2 border-b overflow-hidden border-white w-full mb-2 items-end" key={`job-${i}`}>
               <div
-                className="flex place-content-between w-full"
+                className="flex place-content-between items-center w-full"
               >
                 <span className="text-2xl md:text-4xl">{item.job}</span>
                 <span className="text-large md:text-2xl text-white/75">{item.name}</span>
