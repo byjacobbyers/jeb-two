@@ -38,7 +38,7 @@ const Header: React.FC = () => {
             About
           </Link>
           <a
-            href="https://calendly.com/ohmni/lets-talk"
+            href="https://calendar.notion.so/meet/jacobbyers/lets-talk"
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline hover:text-gray-500 focus:text-white"
