@@ -95,7 +95,7 @@ export default function HomeSection({ projects, page }: Props) {
             onMouseEnter={() => !isMobile && (setCurrent(i), setGreeting(false))}
             onMouseLeave={() => !isMobile && (setCurrent(0), setGreeting(true))}  
           >
-            <div className="p-2 border-b overflow-hidden border-white text-2xl md:text-4xl w-full mb-2 hover:cursor-pointer transition-transform duration-200 hover:scale-[1.02]">
+            <div className="p-2 border-b overflow-hidden border-white text-2xl md:text-4xl w-full mb-2 hover:cursor-pointer transition-transform duration-200 hover:scale-[1.02] hover:translate-x-1">
               <div className="flex gap-x-2 items-center">
                 <div className='w-6 h-6'>
                   <SanityImage
