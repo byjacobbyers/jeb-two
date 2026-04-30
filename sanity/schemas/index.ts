@@ -9,6 +9,7 @@ import work from './documents/work-schema'
 // components
 import sections from './components/page-builder-schema'
 import textBlock from './components/text-block-schema'
+import quoteBlock from './components/quote-block-schema'
 import seo from './components/seo-schema'
 import social from './components/social-schema'
 
@@ -31,6 +32,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     // components
     sections,
     textBlock,
+    quoteBlock,
     seo,
     social,
 

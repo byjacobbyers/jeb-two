@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 
 // blocks
 import TextBlock from '@/components/text-block'
+import QuoteBlock from '@/components/quote-block'
 
 interface BodySerializers {
 	[key: string]: {
@@ -15,6 +16,10 @@ interface BodySerializers {
 const bodySerializers: BodySerializers = {
 	textBlock: {
 		component: TextBlock,
+		wrapper: ({ children }) => <>{children}</>,
+	},
+	quoteBlock: {
+		component: QuoteBlock,
 		wrapper: ({ children }) => <>{children}</>,
 	},
 }

@@ -8,6 +8,7 @@ const pageBuilder = defineField({
 	group: 'pagebuilder',
 	of: [
 		{ type: 'textBlock' },
+		{ type: 'quoteBlock' },
 	],
 	components: {
 		input: PageBuilderInput,

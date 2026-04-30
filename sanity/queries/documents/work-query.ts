@@ -142,6 +142,12 @@ export const WorkQuery = groq`
       },
       _type == 'textBlock' => {
         ...,
+      },
+      _type == 'quoteBlock' => {
+        ...,
+        image {
+          ${imageQuery}
+        },
       }
     },
     seo {
