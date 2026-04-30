@@ -43,7 +43,7 @@ const QuoteBlock: React.FC<QuoteBlockType> = ({
 						</div>
 					)}
 					<div
-						className={`flex w-full flex-col gap-2 text-center md:text-left items-center md:items-start ${hasImage ? 'md:w-3/4' : 'md:w-full'}`}
+						className={`flex w-full flex-col text-center md:text-left items-center md:items-start ${hasImage ? 'md:w-3/4' : 'md:w-full'}`}
 					>
 						{quote ? (
 							<p className='text-lg italic text-foreground pb-5'>{quote}</p>
