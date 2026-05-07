@@ -56,6 +56,14 @@ const Footer: React.FC<any> = () => {
           GitHub
         </Link>
       )}
+      <Link
+        href={'https://cdn.sanity.io/files/tmx7lknw/production/e19573d3aca881b593cf6e75b6bf1def28ef5f38.pdf'}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="ml-4 hover:text-gray-300 transition-colors duration-300"
+      >
+        Resume
+      </Link>
     </footer>
   )
 }

@@ -11,15 +11,15 @@ const Header: React.FC = () => {
   const plausible = usePlausible()
 
   return (
-    <header className="p-5 absolute z-50 w-full font-bold text-base md:text-4xl text-white">
+    <header className="p-5 absolute z-50 w-full font-bold text-base lg:text-4xl text-white">
       <div className="flex border-b border-white">
         {/* Home Link */}
-        <Link href="/" aria-label="Navigate to the home page" className="mb-1 no-underline md:mb-0 hover:text-gray-500 focus:text-white">
+        <Link href="/" aria-label="Navigate to the home page" className="mb-1 no-underline lg:mb-0 hover:text-gray-500 focus:text-white">
           Jacob Byers
         </Link>
 
         {/* Marquee */}
-        <div className="mx-auto w-[40rem] ticker-wrapper hidden md:block text-center text-3xl font-light">
+        <div className="mx-auto w-[40rem] ticker-wrapper hidden lg:block text-center text-3xl font-light">
           <Marquee velocity={0.04}>
             {Array.from({ length: 28 }).map((_, i) => (
               <span key={i}>
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex ml-auto space-x-6 md:w-auto">
+        <nav className="flex ml-auto space-x-6 lg:w-auto">
           <Link href="/" className={`${pathname === '/' ? 'bigDot' : ''} relative no-underline hover:text-gray-500 focus:text-white`}>
             Work
           </Link>

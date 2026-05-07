@@ -27,9 +27,9 @@ export default function HomeSection({ projects, page }: Props) {
   return (
     <section className="px-5 pt-20 min-h-[calc(100vh-3.5rem)] flex flex-wrap w-full gap-y-10">
       {/* Left Panel */}
-      <div className="md:w-3/5 w-full bg-gray-900 rounded-lg overflow-hidden h-[calc(100vh-26rem)] md:h-[calc(100vh-10rem)]">
+      <div className="lg:w-3/5 w-full bg-gray-900 rounded-lg overflow-hidden h-[calc(100vh-26rem)] lg:h-[calc(100vh-10rem)]">
         {greeting ? (
-          <div className="text-2xl md:text-4xl h-full w-full p-5 grid content-center leading-[3rem] transition-opacity duration-700 opacity-100">
+          <div className="text-2xl lg:text-4xl h-full w-full p-5 grid content-center leading-[3rem] transition-opacity duration-700 opacity-100">
             <SimpleText content={page.content} />
           </div>
         ) : (
@@ -48,14 +48,14 @@ export default function HomeSection({ projects, page }: Props) {
                   componentIndex={0}
                   className={
                     projects[current].orientation === 'banner'
-                      ? 'w-[16rem] md:w-[30rem]'
-                      : 'w-[14rem] md:w-[25rem]'
+                      ? 'w-[16rem] lg:w-[30rem]'
+                      : 'w-[14rem] lg:w-[25rem]'
                   }
                   sizes="100vw"
                 />
               </div>
             ) : (
-              <div className="text-2xl md:text-4xl h-full w-full p-5 grid content-center leading-[3rem] transition-opacity duration-700 opacity-100">
+              <div className="text-2xl lg:text-4xl h-full w-full p-5 grid content-center leading-[3rem] transition-opacity duration-700 opacity-100">
                 {/* fallback content */}
               </div>
             )}
@@ -73,7 +73,7 @@ export default function HomeSection({ projects, page }: Props) {
                   sizes='100vw'
                 />
               ) : ( 
-                <div className="text-2xl md:text-4xl h-full w-full p-5 grid items-center leading-[3rem] transition-opacity duration-700 opacity-100">
+                <div className="text-2xl lg:text-4xl h-full w-full p-5 grid items-center leading-[3rem] transition-opacity duration-700 opacity-100">
                   
                 </div>  
               )}
@@ -83,8 +83,8 @@ export default function HomeSection({ projects, page }: Props) {
       </div>
 
       {/* Right Panel */}
-      <div className="md:w-2/5 w-full md:pl-5 md:h-[calc(100vh-10rem)] flex flex-col">
-        <h2 className="text-2xl md:text-4xl font-bold mb-2 uppercase tracking-wide text-white flex-shrink-0">
+      <div className="lg:w-2/5 w-full lg:pl-5 lg:h-[calc(100vh-10rem)] flex flex-col">
+        <h2 className="text-2xl lg:text-4xl font-bold mb-2 uppercase tracking-wide text-white flex-shrink-0">
           Projects
         </h2>
         <div className="overflow-y-auto overflow-x-hidden flex-1 pr-2 flex flex-col justify-center [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white [&::-webkit-scrollbar-thumb]:rounded-full">
@@ -95,7 +95,7 @@ export default function HomeSection({ projects, page }: Props) {
             onMouseEnter={() => !isMobile && (setCurrent(i), setGreeting(false))}
             onMouseLeave={() => !isMobile && (setCurrent(0), setGreeting(true))}  
           >
-            <div className="p-2 border-b overflow-hidden border-white text-2xl md:text-4xl w-full mb-2 hover:cursor-pointer transition-transform duration-200 hover:scale-[1.02] hover:translate-x-1">
+            <div className="p-2 border-b overflow-hidden border-white text-2xl lg:text-4xl w-full mb-2 hover:cursor-pointer transition-transform duration-200 hover:scale-[1.02] hover:translate-x-1">
               <div className="flex gap-x-2 items-center">
                 <div className='w-6 h-6'>
                   <SanityImage

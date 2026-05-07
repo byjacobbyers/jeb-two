@@ -5,6 +5,7 @@
  */
 
 import {visionTool} from '@sanity/vision'
+import {media} from 'sanity-plugin-media'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {structure} from './sanity/structure'
@@ -27,5 +28,6 @@ export default defineConfig({
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
+    media(),
   ],
 })

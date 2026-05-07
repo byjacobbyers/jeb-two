@@ -22,7 +22,7 @@ export default function WorkSection({ page }: Props) {
 
   return (
     <section className="px-5 pt-[5rem] min-h-[calc(100vh-3.5rem)] flex flex-wrap w-full relative gap-y-10">
-      <div className='w-full md:w-3/5 bg-gray-900 rounded-lg overflow-hidden block group relative min-h-[calc(100vh-14rem)] md:min-h-[calc(100vh-8rem)]'>
+      <div className='w-full lg:w-3/5 bg-gray-900 rounded-lg overflow-hidden block group relative min-h-[calc(100vh-14rem)] lg:min-h-[calc(100vh-8rem)]'>
         <div className="absolute z-30 w-full h-full grid content-center justify-center">
           {page.logo && (
             <div
@@ -37,8 +37,8 @@ export default function WorkSection({ page }: Props) {
                 componentIndex={0}
                 className={
                   page.orientation === 'banner'
-                    ? 'w-[16rem] md:w-[30rem]'
-                    : 'w-[14rem] md:w-[25rem]'
+                    ? 'w-[16rem] lg:w-[30rem]'
+                    : 'w-[14rem] lg:w-[25rem]'
                 }
                 sizes="100vw"
               />
@@ -46,10 +46,10 @@ export default function WorkSection({ page }: Props) {
           )}
         </div>
         <div className="absolute bottom-5 z-30 w-full flex justify-between px-5">
-          <h1 className="text-xl md:text-[30px]">{page.title}</h1>
+          <h1 className="text-xl lg:text-[30px]">{page.title}</h1>
           {page.url && (
             <Link 
-              href={page.url} className='hover:underline no-underline text-xl md:text-[30px]'
+              href={page.url} className='hover:underline no-underline text-xl lg:text-[30px]'
               onClick={() => plausible('Project Site Click', { props: { project: page.title } })}
             >
               Visit Site
@@ -71,7 +71,7 @@ export default function WorkSection({ page }: Props) {
           )}
         </div>
       </div>
-      <div className='w-full md:w-2/5 grid md:pl-5 content-center'>
+      <div className='w-full lg:w-2/5 grid lg:pl-5 content-center'>
         <h2 className='w-full border-b border-white text-white/75'>The Tech Stack</h2>
         {page.stack?.map((item, i) => {
           return (
@@ -79,8 +79,8 @@ export default function WorkSection({ page }: Props) {
               <div
                 className="flex place-content-between w-full"
               >
-                <span className="text-2xl md:text-4xl">{item.title}</span>
-                <span className="text-large md:text-2xl text-white/75">{item.type}</span>
+                <span className="text-2xl lg:text-4xl">{item.title}</span>
+                <span className="text-large lg:text-2xl text-white/75">{item.type}</span>
               </div>
             </div>
           )
@@ -92,8 +92,8 @@ export default function WorkSection({ page }: Props) {
               <div
                 className="flex place-content-between items-center w-full"
               >
-                <span className="text-2xl md:text-4xl">{item.job}</span>
-                <span className="text-large md:text-2xl text-white/75">{item.name}</span>
+                <span className="text-2xl lg:text-4xl">{item.job}</span>
+                <span className="text-large lg:text-2xl text-white/75">{item.name}</span>
               </div>
             </div>
           )
