@@ -22,6 +22,9 @@
   "homepage": "https://jacobbyers.me",
   "private": true,
   "pnpm": {
+    "overrides": {
+      "@sanity/client": "6.28.4"
+    },
     "patchedDependencies": {
       "@sanity/orderable-document-list@1.5.1": "patches/@sanity__orderable-document-list@1.5.1.patch"
     }
@@ -35,6 +38,7 @@
   "dependencies": {
     "@radix-ui/react-navigation-menu": "^1.2.5",
     "@radix-ui/react-slot": "^1.1.2",
+    "@sanity/client": "6.28.4",
     "@sanity/icons": "^3.7.0",
     "@sanity/image-url": "^1.1.0",
     "@sanity/orderable-document-list": "^1.5.1",
