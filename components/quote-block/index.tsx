@@ -23,7 +23,7 @@ const QuoteBlock: React.FC<QuoteBlockType> = ({
 	return (
 		<section
 			id={`quote-block-${componentIndex}`}
-			className='quote-block text-block flex w-full justify-center px-5 pb-10 md:pb-20'
+			className='quote-block text-block flex w-full justify-center px-5'
 		>
 			<div className='w-full max-w-4xl'>
 				<div

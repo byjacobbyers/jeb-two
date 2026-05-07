@@ -22,7 +22,9 @@ export default function WorkPage({ page }: WorkPageProps) {
     <>
       <main className="flex flex-col items-center justify-between">
         <WorkSection page={page} />
-        <Sections body={page.sections} />
+        <div className="w-full flex flex-col gap-10 lg:gap-20 py-10 lg:py-20">
+          <Sections body={page.sections} />
+        </div>
       </main>
       <Footer />
     </>

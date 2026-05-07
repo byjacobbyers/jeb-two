@@ -23,7 +23,7 @@ const TextBlock: React.FC<TextBlockType> = ({
 		return (
 			<section
 				id={`${'text-block-' + componentIndex}`}
-				className={`text-block flex w-full justify-center px-5 py-10 md:py-20`}
+				className={`text-block flex w-full justify-center px-5`}
 			>
 				<div className='text-xl md:text-2xl flex flex-col w-full max-w-4xl '>
 					<SimpleText content={content.text} />
