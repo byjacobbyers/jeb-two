@@ -7,6 +7,8 @@ import { usePlausible } from 'next-plausible'
 // Types
 import { WorkType } from '@/types/documents/work-type'
 
+// Utils
+import { workLogoWidthClass } from '@/lib/work-logo-width'
 
 // Components
 import SanityImage from '../sanity-image'
@@ -35,11 +37,7 @@ export default function WorkSection({ page }: Props) {
                 width={page.logo?.asset.metadata.dimensions.width}
                 height={page.logo?.asset.metadata.dimensions.height}
                 componentIndex={0}
-                className={
-                  page.orientation === 'banner'
-                    ? 'w-[16rem] lg:w-[30rem]'
-                    : 'w-[14rem] lg:w-[25rem]'
-                }
+                className={workLogoWidthClass(page.orientation)}
                 sizes="100vw"
               />
             </div>

@@ -19,7 +19,7 @@ export type WorkType = {
     name: string
   }[]
   logo: DefaultImageType
-  orientation: 'badge' | 'button' | 'banner'
+  orientation: 'badge' | 'button' | 'banner' | 'long'
   defaultImage: DefaultImageType
   sections?: any // Replace `any` with the appropriate type if available
   seo: SeoType

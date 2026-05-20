@@ -111,6 +111,7 @@ export default defineType({
           { title: 'Badge', value: 'badge' },
           { title: 'Button', value: 'button' },
           { title: 'Banner', value: 'banner' },
+          { title: 'Long', value: 'long' },
         ],
       },
     }),

@@ -9,6 +9,8 @@ import { isMobile } from 'react-device-detect'
 import { WorkType } from '@/types/documents/work-type'
 import { PageType } from '@/types/documents/page-type'
 
+// Utils
+import { workLogoWidthClass } from '@/lib/work-logo-width'
 
 // Components
 import SanityImage from '../sanity-image'
@@ -46,11 +48,7 @@ export default function HomeSection({ projects, page }: Props) {
                   width={projects[current].logo?.asset.metadata.dimensions.width}
                   height={projects[current].logo?.asset.metadata.dimensions.height}
                   componentIndex={0}
-                  className={
-                    projects[current].orientation === 'banner'
-                      ? 'w-[16rem] lg:w-[30rem]'
-                      : 'w-[14rem] lg:w-[25rem]'
-                  }
+                  className={workLogoWidthClass(projects[current].orientation)}
                   sizes="100vw"
                 />
               </div>

@@ -10,11 +10,9 @@ import {
 	StringSchemaType,
 } from 'sanity'
 import { Grid, Stack, Button, Dialog, Box, Card, Heading } from '@sanity/ui'
-import { useCallback, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { AddIcon } from '@sanity/icons'
 import { randomKey } from '@sanity/util/content'
-import React from 'react'
-import Image from 'next/image'
 
 type Schema =
 	| BooleanSchemaType
@@ -107,6 +105,10 @@ type PreviewProps = {
 
 function PreviewCard(props: PreviewProps) {
 	const { onClick, schema } = props
+	const [imageFailed, setImageFailed] = useState(false)
+	const Icon = schema.icon
+	const previewSrc = `/page-builder/${schema.name}.png`
+
 	return (
 		<Card
 			role='button'
@@ -119,24 +121,30 @@ function PreviewCard(props: PreviewProps) {
 				<Heading as='h5' size={1}>
 					{schema.title}
 				</Heading>
-				<div
+				<Box
 					style={{
 						height: '150px',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
 					}}
 				>
-					<Image
-						style={{
-							width: '100%',
-							height: '100%',
-							objectFit: 'contain',
-						}}
-						width={335}
-						height={150}
-						src={`/page-builder/${schema.name}.png`}
-						alt={`${schema.title}`}
-						onError={(i: any) => (i.target.style.display = 'none')}
-					/>
-				</div>
+					{!imageFailed ? (
+						// eslint-disable-next-line @next/next/no-img-element
+						<img
+							style={{
+								width: '100%',
+								height: '100%',
+								objectFit: 'contain',
+							}}
+							src={previewSrc}
+							alt={schema.title ?? schema.name}
+							onError={() => setImageFailed(true)}
+						/>
+					) : Icon ? (
+						<Icon style={{ width: 48, height: 48, opacity: 0.6 }} />
+					) : null}
+				</Box>
 			</Stack>
 		</Card>
 	)
