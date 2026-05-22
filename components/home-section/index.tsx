@@ -82,10 +82,10 @@ export default function HomeSection({ projects, page }: Props) {
 
       {/* Right Panel */}
       <div className="lg:w-2/5 w-full lg:pl-5 lg:h-[calc(100vh-10rem)] flex flex-col">
-        <h2 className="text-2xl lg:text-4xl font-bold mb-2 uppercase tracking-wide text-white flex-shrink-0">
+        <h2 className="text-2xl lg:text-4xl font-bold mb-4 lg:mb-2 uppercase tracking-wide text-white flex-shrink-0">
           Projects
         </h2>
-        <div className="overflow-y-auto overflow-x-hidden flex-1 pr-2 flex flex-col justify-center [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white [&::-webkit-scrollbar-thumb]:rounded-full">
+        <div className="overflow-y-auto overflow-x-hidden flex-1 pr-2 flex flex-col [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white [&::-webkit-scrollbar-thumb]:rounded-full">
         {projects.map((item, i) => (
           <Link 
             href={`/work/${item.slug}`} 

@@ -142,7 +142,9 @@ function PreviewCard(props: PreviewProps) {
 							onError={() => setImageFailed(true)}
 						/>
 					) : Icon ? (
-						<Icon style={{ width: 48, height: 48, opacity: 0.6 }} />
+						<Box style={{ fontSize: 48, lineHeight: 0, opacity: 0.6 }}>
+							<Icon />
+						</Box>
 					) : null}
 				</Box>
 			</Stack>
